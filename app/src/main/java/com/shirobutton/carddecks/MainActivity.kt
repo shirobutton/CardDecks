@@ -29,5 +29,11 @@ class MainActivity : AppCompatActivity() {
         } + CardTypeB(
             titleResId = R.string.title,
             imageUrl = "https://placehold.jp/100x100.png"
+        ) + CardTypeC(
+            title = "StringTitle",
+            imageResId = R.drawable.ic_launcher_background
+        ) + CardTypeD(
+            titleResId = R.string.title,
+            imageResId = R.drawable.ic_launcher_background
         )
 }

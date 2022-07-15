@@ -1,18 +1,28 @@
 package com.shirobutton.carddecks
 
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
 sealed interface CardListItem {
-    val imageUrl: String
     override fun equals(other: Any?): Boolean
 }
 
 data class CardTypeA(
     val title: String,
-    override val imageUrl: String
+    val imageUrl: String
 ) : CardListItem
 
 data class CardTypeB(
     @StringRes val titleResId: Int,
-    override val imageUrl: String
+    val imageUrl: String
+) : CardListItem
+
+data class CardTypeC(
+    val title: String,
+    @DrawableRes val imageResId: Int
+) : CardListItem
+
+data class CardTypeD(
+    @StringRes val titleResId: Int,
+    @DrawableRes val imageResId: Int
 ) : CardListItem
