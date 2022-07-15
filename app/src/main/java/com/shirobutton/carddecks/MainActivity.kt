@@ -28,21 +28,21 @@ class MainActivity : AppCompatActivity() {
 
         private fun createData() =
             listOf(
-                CardTypeA(
-                    title = STRING_TITLE,
-                    imageUrl = IMAGE_URL
+                CardListItem(
+                    StringTitleContainer(STRING_TITLE),
+                    ImageUrlContainer(IMAGE_URL)
                 ),
-                CardTypeB(
-                    titleResId = TITLE_RES_ID,
-                    imageUrl = IMAGE_URL
+                CardListItem(
+                    StringResourceTitleContainer(TITLE_RES_ID),
+                    ImageUrlContainer(IMAGE_URL)
                 ),
-                CardTypeC(
-                    title = STRING_TITLE,
-                    imageResId = IMAGE_RES_ID
+                CardListItem(
+                    StringTitleContainer(STRING_TITLE),
+                    ImageResourceContainer(IMAGE_RES_ID)
                 ),
-                CardTypeD(
-                    titleResId = TITLE_RES_ID,
-                    imageResId = IMAGE_RES_ID
+                CardListItem(
+                    StringResourceTitleContainer(TITLE_RES_ID),
+                    ImageResourceContainer(IMAGE_RES_ID)
                 )
             )
     }

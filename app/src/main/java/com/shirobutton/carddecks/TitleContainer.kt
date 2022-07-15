@@ -4,11 +4,6 @@ import androidx.annotation.StringRes
 
 sealed interface TitleContainer
 
-sealed interface StringTitleContainer : TitleContainer {
-    val title: String
-}
+class StringTitleContainer(val title: String) : TitleContainer
 
-sealed interface StringResourceTitleContainer : TitleContainer {
-    @get:StringRes
-    val titleResId: Int
-}
+class StringResourceTitleContainer(@StringRes val titleResId: Int) : TitleContainer

@@ -4,10 +4,6 @@ import androidx.annotation.DrawableRes
 
 sealed interface ImageContainer
 
-sealed interface ImageUrlContainer : ImageContainer {
-    val imageUrl: String
-}
+class ImageUrlContainer(val imageUrl: String) : ImageContainer
 
-sealed interface ImageResourceContainer : ImageContainer {
-    @get:DrawableRes val imageResId: Int
-}
+class ImageResourceContainer(@DrawableRes val imageResId: Int) : ImageContainer
