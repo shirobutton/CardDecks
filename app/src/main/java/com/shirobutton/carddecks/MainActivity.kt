@@ -20,20 +20,30 @@ class MainActivity : AppCompatActivity() {
         binding.root.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun createData() =
-        List(3) {
-            CardTypeA(
-                title = it.toString(),
-                imageUrl = "https://placehold.jp/100x100.png"
+    companion object {
+        private const val STRING_TITLE = "StringTitle"
+        private const val TITLE_RES_ID = R.string.title
+        private const val IMAGE_URL = "https://placehold.jp/100x100.png"
+        private const val IMAGE_RES_ID = R.drawable.ic_launcher_background
+
+        private fun createData() =
+            listOf(
+                CardTypeA(
+                    title = STRING_TITLE,
+                    imageUrl = IMAGE_URL
+                ),
+                CardTypeB(
+                    titleResId = TITLE_RES_ID,
+                    imageUrl = IMAGE_URL
+                ),
+                CardTypeC(
+                    title = STRING_TITLE,
+                    imageResId = IMAGE_RES_ID
+                ),
+                CardTypeD(
+                    titleResId = TITLE_RES_ID,
+                    imageResId = IMAGE_RES_ID
+                )
             )
-        } + CardTypeB(
-            titleResId = R.string.title,
-            imageUrl = "https://placehold.jp/100x100.png"
-        ) + CardTypeC(
-            title = "StringTitle",
-            imageResId = R.drawable.ic_launcher_background
-        ) + CardTypeD(
-            titleResId = R.string.title,
-            imageResId = R.drawable.ic_launcher_background
-        )
+    }
 }
