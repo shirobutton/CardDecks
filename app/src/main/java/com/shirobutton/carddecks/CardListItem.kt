@@ -3,26 +3,26 @@ package com.shirobutton.carddecks
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-sealed interface CardListItem {
+sealed interface CardListItem : TitleContainer {
     override fun equals(other: Any?): Boolean
 }
 
 data class CardTypeA(
-    val title: String,
+    override val title: String,
     val imageUrl: String
-) : CardListItem
+) : CardListItem, StringTitleContainer
 
 data class CardTypeB(
-    @StringRes val titleResId: Int,
+    @StringRes override val titleResId: Int,
     val imageUrl: String
-) : CardListItem
+) : CardListItem, StringResourceTitleContainer
 
 data class CardTypeC(
-    val title: String,
+    override val title: String,
     @DrawableRes val imageResId: Int
-) : CardListItem
+) : CardListItem, StringTitleContainer
 
 data class CardTypeD(
-    @StringRes val titleResId: Int,
+    @StringRes override val titleResId: Int,
     @DrawableRes val imageResId: Int
-) : CardListItem
+) : CardListItem, StringResourceTitleContainer

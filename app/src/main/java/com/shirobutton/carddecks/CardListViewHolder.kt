@@ -16,13 +16,11 @@ class CardListViewHolder(
         bindImage(item)
     }
 
-    private fun bindTitle(item: CardListItem) {
+    private fun bindTitle(item: TitleContainer) {
         val context = binding.root.context
         binding.title.text = when (item) {
-            is CardTypeA -> item.title
-            is CardTypeB -> context.getString(item.titleResId)
-            is CardTypeC -> item.title
-            is CardTypeD -> context.getString(item.titleResId)
+            is StringTitleContainer -> item.title
+            is StringResourceTitleContainer -> context.getString(item.titleResId)
         }
     }
 
