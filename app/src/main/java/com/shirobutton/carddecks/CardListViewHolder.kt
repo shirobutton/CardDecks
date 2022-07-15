@@ -10,8 +10,8 @@ class CardListViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: CardListItem) {
-        bindTitle(item.titleContainer)
-        bindImage(item.imageContainer)
+        bindTitle(item)
+        bindImage(item)
     }
 
     private fun bindTitle(item: TitleContainer) {

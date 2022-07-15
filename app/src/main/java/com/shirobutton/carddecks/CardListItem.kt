@@ -1,6 +1,6 @@
 package com.shirobutton.carddecks
 
 data class CardListItem(
-    val titleContainer: TitleContainer,
-    val imageContainer: ImageContainer
-)
+    private val titleContainer: TitleContainer,
+    private val imageContainer: ImageContainer
+) : TitleContainer by titleContainer, ImageContainer by imageContainer
