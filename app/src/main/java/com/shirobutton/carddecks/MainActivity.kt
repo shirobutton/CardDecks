@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun createData() =
         List(3) {
-            CardListItem(
+            CardTypeA(
                 title = it.toString(),
                 imageUrl = "https://placehold.jp/100x100.png"
             )
