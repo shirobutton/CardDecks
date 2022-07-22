@@ -11,11 +11,17 @@ class CardListViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: CardListItem) {
-        binding.title.text = item.title
+        binding.title.text = getTitle(item)
         Glide.with(binding.image)
             .load(item.imageUrl)
             .into(binding.image)
     }
+
+    private fun getTitle(item: CardListItem) =
+        when (item) {
+            is CardTypeA -> item.title
+            is CardTypeB -> binding.root.context.getString(item.titleResId)
+        }
 
     companion object {
         fun create(parent: ViewGroup): CardListViewHolder {

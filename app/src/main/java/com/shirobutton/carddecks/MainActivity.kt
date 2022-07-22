@@ -26,5 +26,8 @@ class MainActivity : AppCompatActivity() {
                 title = it.toString(),
                 imageUrl = "https://placehold.jp/100x100.png"
             )
-        }
+        } + CardTypeB(
+            titleResId = R.string.title,
+            imageUrl = "https://placehold.jp/100x100.png"
+        )
 }
