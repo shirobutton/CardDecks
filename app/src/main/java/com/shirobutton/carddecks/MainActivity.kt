@@ -2,6 +2,7 @@ package com.shirobutton.carddecks
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.shirobutton.carddecks.databinding.ActivityMainBinding
 
@@ -22,27 +23,27 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val STRING_TITLE = "StringTitle"
-        private const val TITLE_RES_ID = R.string.title
-        private const val IMAGE_URL = "https://placehold.jp/100x100.png"
-        private const val IMAGE_RES_ID = R.drawable.ic_launcher_background
+        private val TITLE_RES_ID = R.string.title.asStringResource()
+        private val IMAGE_URL = "https://placehold.jp/100x100.png".toUri()
+        private val IMAGE_RES_ID = R.drawable.ic_launcher_background.asDrawableResource()
 
         private fun createData() =
             listOf(
-                CardTypeA(
-                    title = STRING_TITLE,
-                    imageUrl = IMAGE_URL
+                CardListItem(
+                    STRING_TITLE,
+                    IMAGE_URL
                 ),
-                CardTypeB(
-                    titleResId = TITLE_RES_ID,
-                    imageUrl = IMAGE_URL
+                CardListItem(
+                    TITLE_RES_ID,
+                    IMAGE_URL
                 ),
-                CardTypeC(
-                    title = STRING_TITLE,
-                    imageResId = IMAGE_RES_ID
+                CardListItem(
+                    STRING_TITLE,
+                    IMAGE_RES_ID
                 ),
-                CardTypeD(
-                    titleResId = TITLE_RES_ID,
-                    imageResId = IMAGE_RES_ID
+                CardListItem(
+                    TITLE_RES_ID,
+                    IMAGE_RES_ID
                 )
             )
     }
