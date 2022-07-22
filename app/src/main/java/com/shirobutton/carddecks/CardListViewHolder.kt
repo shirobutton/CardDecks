@@ -24,12 +24,10 @@ class CardListViewHolder(
         }
     }
 
-    private fun bindImage(item: CardListItem) =
+    private fun bindImage(item: ImageContainer) =
         when (item) {
-            is CardTypeA -> loadImage(item.imageUrl)
-            is CardTypeB -> loadImage(item.imageUrl)
-            is CardTypeC -> setImageResource(item.imageResId)
-            is CardTypeD -> setImageResource(item.imageResId)
+            is ImageUrlContainer -> loadImage(item.imageUrl)
+            is ImageResourceContainer -> setImageResource(item.imageResId)
         }
 
     private fun loadImage(imageUrl: String) {
